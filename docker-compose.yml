@@ -1,0 +1,25 @@
+services:
+  nginx:
+    image: nginx:1.27.2
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx:/etc/nginx/conf.d
+    depends_on:
+      - php-fpm
+  php-fpm:
+    build: 
+      context: ./docker/php
+    volumes:
+      - ./src:/var/www/html
+  mysql:
+    image: mysql:9.1
+    environment:
+        MYSQL_DATABASE: todo
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+        TZ: Asia/Tokyo
+    ports:
+      - "3306:3306"
