@@ -13,6 +13,8 @@ services:
       context: ./docker/php
     volumes:
       - ./src:/var/www/html
+    ports:
+      - 5173:5173
   mysql:
     image: mysql:9.1
     environment:
@@ -23,3 +25,12 @@ services:
         TZ: Asia/Tokyo
     ports:
       - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+volumes:
+  db:

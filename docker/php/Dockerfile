@@ -1,8 +1,10 @@
 FROM php:8.2.25-fpm
+EXPOSE 5173
 COPY php.ini /usr/local/etc/php/
 RUN apt-get update && apt-get install -y \
     unzip \
-    vim
+    vim \
+    npm
 RUN docker-php-ext-install pdo_mysql
 COPY composer-install.sh /usr/local/bin/
 WORKDIR /usr/local/bin
