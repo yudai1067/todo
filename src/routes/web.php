@@ -7,9 +7,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::name('todo.')->group(function () {
+        Route::prefix('todo')->group(function () {
+            Route::get('/create', [App\Http\Controllers\todo\CreateController::class, 'index'])->name('create');
+            Route::post('/create', [App\Http\Controllers\todo\CreateController::class, 'create'])->name('create');
+        });
+    });
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
