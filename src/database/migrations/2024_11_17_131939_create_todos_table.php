@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->string('title', 30);
-            $table->text('description');
+            $table->string('title', 100);
+            $table->text('description')->nullable();
             $table->dateTime('deadline');
+            $table->datetime('completed_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

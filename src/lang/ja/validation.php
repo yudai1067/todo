@@ -1,9 +1,6 @@
 <?php
 
 return [
-
-    /* メッセージの内容がご自身のアプリに適さない場合には、必要に応じて修正願います */
-
     'accepted' => ':attributeを承認してください。',
     'accepted_if' => ':otherが:valueの場合、:attributeを承認してください。',
     'active_url' => ':attributeが有効なURLではありません。',
@@ -201,7 +198,7 @@ return [
         'date_of_birth' => '生年月日',
         'day' => '日',
         'deleted_at' => '削除日',
-        'description' => '説明',
+        'description' => '詳細',
         'district' => '地区',
         'duration' => '期間',
         'email' => 'メールアドレス',
@@ -256,6 +253,7 @@ return [
         'updated_at' => '更新日',
         'username' => 'ユーザー名',
         'year' => '年',
+        'deadline' => '期日',
     ],
 
 ];
