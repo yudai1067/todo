@@ -41,7 +41,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            アカウント設定
                         </x-dropdown-link>
 
                         <!-- Authentication -->
