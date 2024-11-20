@@ -1,16 +1,23 @@
 services:
   nginx:
-    image: nginx:1.27.2
+    build: 
+      context: .
+      dockerfile: ./docker/nginx/Dockerfile
     ports:
       - "80:80"
     volumes:
-      - ./src:/var/www/html
-      - ./docker/nginx:/etc/nginx/conf.d
+      - ./src/public:/var/www/html/public
+      - ./docker/nginx/templates:/etc/nginx/templates
+    environment:
+      - FASTCGI_PASS=php-fpm:9000
     depends_on:
       - php-fpm
   php-fpm:
     build: 
-      context: ./docker/php-fpm
+      context: .
+      dockerfile: ./docker/php-fpm/Dockerfile
+    environment:
+      - APP_ENV=local
     volumes:
       - ./src:/var/www/html
     ports:

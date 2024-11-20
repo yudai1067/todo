@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <x-alert />
-    <x-primary-button-link href="{{ route('todo.create') }}" class="mb-5">
+    <x-primary-button-link href="{{ route('todo.create.index') }}" class="mb-5">
         タスクを追加する
     </x-primary-button-link>
     @if ($todos->isEmpty())
@@ -35,7 +35,7 @@
                         <x-primary-button-link href="{{ route('todo.complete', ['id' => $todo->id]) }}">
                             完了する
                         </x-primary-button-link>
-                        <x-primary-button-link href="{{ route('todo.edit', ['id' => $todo->id]) }}" class="ms-2">
+                        <x-primary-button-link href="{{ route('todo.edit.index', ['id' => $todo->id]) }}" class="ms-2">
                             編集する
                         </x-primary-button-link>
                     </div>

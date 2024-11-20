@@ -13,11 +13,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::name('todo.')->group(function () {
         Route::prefix('todo')->group(function () {
-            Route::get('/create', [App\Http\Controllers\todo\CreateController::class, 'index'])->name('create');
+            Route::get('/create', [App\Http\Controllers\todo\CreateController::class, 'index'])->name('create.index');
             Route::post('/create', [App\Http\Controllers\todo\CreateController::class, 'create'])->name('create');
             Route::get('/complete/{id}', [App\Http\Controllers\todo\CompleteController::class,'complete'])->name('complete');
             Route::get('/complete/undo/{id}', [App\Http\Controllers\todo\CompleteController::class,'undo'])->name('complete.undo');
-            Route::get('/edit/{id}', [App\Http\Controllers\todo\EditController::class,'index'])->name('edit');
+            Route::get('/edit/{id}', [App\Http\Controllers\todo\EditController::class,'index'])->name('edit.index');
             Route::post('/edit/{id}', [App\Http\Controllers\todo\EditController::class,'edit'])->name('edit');
             Route::get('/delete/{id}', [App\Http\Controllers\todo\DeleteController::class,'delete'])->name('delete');
             Route::get('/delete/undo/{id}', [App\Http\Controllers\todo\DeleteController::class,'undo'])->name('delete.undo');
