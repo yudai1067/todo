@@ -12,5 +12,6 @@ WORKDIR /usr/local/bin
 RUN . /usr/local/bin/composer-install.sh
 WORKDIR /var/www/html
 COPY ./docker/php-fpm/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 VOLUME ["/var/www/html/public"]
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
