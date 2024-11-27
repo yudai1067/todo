@@ -10,6 +10,7 @@ services:
       - ./docker/nginx/templates:/etc/nginx/templates
     environment:
       - FASTCGI_PASS=php-fpm:9000
+      - SERVER_NAME=localhost
     depends_on:
       - php-fpm
   php-fpm:
