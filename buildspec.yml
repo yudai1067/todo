@@ -1,11 +1,5 @@
 version: 0.2
 
-# env:
-#   variables:
-#     JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
-#   parameter-store:
-#     LOGIN_PASSWORD: /CodeBuild/dockerLoginPassword
-
 phases:
   pre_build:
     commands:
@@ -34,17 +28,3 @@ phases:
         do
           docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/${IMAGE_REPO_PREFIX}_${container}:$IMAGE_TAG
         done
-
-# artifacts:
-#   files:
-#     - target/messageUtil-1.0.jar
-#   discard-paths: yes
-#   secondary-artifacts:
-#     artifact1:
-#       files:
-#         - target/artifact-1.0.jar
-#       discard-paths: yes
-#     artifact2:
-#       files:
-#         - target/artifact-2.0.jar
-#       discard-paths: yes
