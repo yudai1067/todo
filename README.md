@@ -29,6 +29,7 @@ TODO管理アプリです。
 * SES
 * S3
 * Application Load Balancer
+* AWS Certificate Manager
 ## バージョン管理
 * Git
 ## 開発環境
