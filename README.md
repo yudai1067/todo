@@ -14,7 +14,7 @@ TODO管理アプリです。
 ## 言語
 * PHP 8.2.25
 ## フレームワーク
-* Laravel 11.30.0
+* Laravel 11
 * Tailwind
 ## データベース
 * MySQL 8.0.39
