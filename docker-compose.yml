@@ -24,7 +24,7 @@ services:
     ports:
       - 5173:5173
   mysql:
-    image: mysql:9.1
+    image: mysql:8.0.39
     environment:
         MYSQL_DATABASE: todo
         MYSQL_ROOT_PASSWORD: root
