@@ -76,6 +76,12 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('todo.list.completed')" :active="request()->routeIs('todo.list.completed')" class="text-xs">
+                完了済
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('todo.list.deleted')" :active="request()->routeIs('todo.list.deleted')" class="text-xs">
+                削除済
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
